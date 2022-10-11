@@ -1,0 +1,19 @@
+name: Helloworldapp
+
+on:
+  push:
+   branches: [ master ]
+      
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Build & Push Image
+      run: |
+        docker build -t jayjay87/helloworldapp1 .
+        docker login -u ${{ secrets.DOCKERHUB_USERNAME}} -p ${{ secrets.DOCKERHUB_TOKEN }}
+        docker push jayjay87/helloworldapp1
+        docker 
