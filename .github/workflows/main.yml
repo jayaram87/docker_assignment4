@@ -2,7 +2,7 @@ name: Helloworldapp
 
 on:
   push:
-   branches: [ master ]
+   branches: [ main ]
       
 jobs:
   build:
